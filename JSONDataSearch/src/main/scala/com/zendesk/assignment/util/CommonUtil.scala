@@ -97,8 +97,8 @@ object CommonUtil {
       println("Data Found in " + dataSetName)
       searchResultDF.show(Int.MaxValue, false)
       //Alternate option to display result in JSON format
-      println("Displaying in JSON format")
-      searchResultDF.toJSON.collect.foreach(println)
+      //println("Displaying in JSON format")
+      //searchResultDF.toJSON.collect.foreach(println)
     }
 
     searchResultDF
@@ -118,8 +118,8 @@ object CommonUtil {
       println("No matching record found in available dataset: " + searchOption)
     } else{
       arrayDataSearchResult.show(5000, false)
-      println("Displaying in JSON format")
-      arrayDataSearchResult.toJSON.collect.foreach(println)
+      //println("Displaying in JSON format")
+      //arrayDataSearchResult.toJSON.collect.foreach(println)
     }
 
     arrayDataSearchResult
