@@ -6,8 +6,15 @@ import com.zendesk.assignment.util.CommonUtil._
 import com.zendesk.assignment.util.InputException
 import java.io.{FileNotFoundException, FileOutputStream, PrintStream}
 
+/*
+ Scala object to identify the supplied search element in available data set.
+ */
 object DataSearch {
 
+  /**
+    *
+    * @param args
+    */
   def main(args: Array[String]): Unit = {
 
 
@@ -35,10 +42,12 @@ object DataSearch {
     val searchTerm = args(1)
     val searchValue = args(2)
 
+    // Fetch all file paths from config.properties
     val organizationJsonFilePath = properties.getProperty("spark.organizationsJsonFilePath")
     val ticketJsonFilePath = properties.getProperty("spark.ticketsJsonFilePath")
     val userJsonFilePath = properties.getProperty("spark.usersJsonFilePath")
 
+    // Only if all the file paths specified in config file exists, search would proceed
     if((isFileFound(properties, organizationJsonFilePath)) &&((isFileFound(properties, ticketJsonFilePath))) && ((isFileFound(properties, userJsonFilePath)))){
 
       val organizationDF= spark.read.json(organizationJsonFilePath)
@@ -94,11 +103,6 @@ object DataSearch {
 
 
     }
-
-
-
-
-
 
 
   }

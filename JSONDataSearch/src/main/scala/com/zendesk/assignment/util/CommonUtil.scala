@@ -10,6 +10,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.util.Try
 
+
 class InvalidArgException(s:String) extends Exception(s){}
 
 class InputException{
@@ -23,6 +24,11 @@ class InputException{
 
 object CommonUtil {
 
+  /**
+    *
+    * @param spark
+    * @return properties
+    */
   def readConfig(spark: SparkSession): Properties ={
 
     val properties = new Properties()
@@ -50,7 +56,12 @@ object CommonUtil {
 
   }
 
-
+  /**
+    *
+    * @param properties
+    * @param filePath
+    * @return isFileExists
+    */
   def isFileFound(properties: Properties, filePath: String): Boolean ={
 
     var isFileExists = false
@@ -69,6 +80,14 @@ object CommonUtil {
 
   }
 
+  /**
+    *
+    * @param df
+    * @param searchTerm
+    * @param searchValue
+    * @param dataSetName
+    * @return searchResultDF
+    */
   def searchOutcome(df: DataFrame, searchTerm: String, searchValue: String, dataSetName: String): DataFrame ={
     val searchResultDF = df.filter(df(searchTerm) === searchValue)
     if (searchResultDF.head(1).isEmpty){
@@ -81,6 +100,13 @@ object CommonUtil {
     searchResultDF
   }
 
+
+  /**
+    *
+    * @param df
+    * @param colValue
+    * @return isSuccess
+    */
   def hasColumn(df: DataFrame, colValue: String) = Try(df(colValue)).isSuccess
 
 }
