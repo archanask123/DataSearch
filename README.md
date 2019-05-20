@@ -60,3 +60,22 @@ Once the project is built, latest jar file will be present in project location â
 *Copy jar file to Job execution home directory(specified in wrapper script). 
 If you wish to run from a different location and/or need to change the jar name, **update the JAR file path in wrapper script** 
 
+
+3. Create logs directory to hold the job execution log files
+
+```bash
+cd <JOB_EXECUTION_DIR>
+mkdir logs
+```
+
+4. Copy JAR file to <JOB_EXECUTION_DIR>
+```bash
+cp <JAR.jar> <JOB_EXECUTION_DIR>
+```
+
+5. Copy config.properties 
+```bash
+cp config.properties <JOB_EXECUTION_DIR>
+```
+
+
