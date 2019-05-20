@@ -5,6 +5,7 @@ import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession, _}
 import com.zendesk.assignment.util.CommonUtil._
 import com.zendesk.assignment.util.InputException
 import java.io.{FileNotFoundException, FileOutputStream, PrintStream}
+import org.apache.spark.sql.functions._
 
 /*
  Scala object to identify the supplied search element in available data set.
@@ -42,6 +43,7 @@ object DataSearch {
     val searchTerm = args(1)
     val searchValue = args(2)
 
+
     // Fetch all file paths from config.properties
     val organizationJsonFilePath = properties.getProperty("spark.organizationsJsonFilePath")
     val ticketJsonFilePath = properties.getProperty("spark.ticketsJsonFilePath")
@@ -62,6 +64,7 @@ object DataSearch {
       // Creating a map to relate searchOption and corresponding DataFrame
       val searchOptionMap = Map("Users" -> userDF, "Tickets" -> ticketDF , "Organizations" -> organizationDF)
       val relatedDataMap = Map("_id" -> "organization_id")
+      val colListWithArray = List("domain_names","tags")
 
       //Check if searchOption value is correct
       if(searchOptionMap.keySet.exists(_ == searchOption)){
@@ -73,13 +76,22 @@ object DataSearch {
 
           println("Search Term: " + searchTerm)
           println("Search Value: " + searchValue)
-          //Check if searchValue is present
-          val searchResultDF = searchOutcome(searchOptionMap(searchOption), searchTerm, searchValue, searchOption)
 
-          /* Below code can be used if we need the output to be displayed in JSON format
-             Currently commenting it out as data is displayed in tabular format
-             // searchResultDF.toJSON.collect.foreach(println)
-           */
+          // Checking for data within array
+          if(colListWithArray.contains(searchTerm)){
+
+            searchArrayData(searchOptionMap(searchOption), searchTerm, searchValue, searchOption)
+
+          } else {
+
+            //Check if searchValue is present
+            val searchResultDF = searchOutcome(searchOptionMap(searchOption), searchTerm, searchValue, searchOption)
+
+            /* Below code can be used if we need the output to be displayed in JSON format
+            Currently commenting it out as data is displayed in tabular format
+            // searchResultDF.toJSON.collect.foreach(println)
+          */
+          }
 
 
           if ((searchOption == "Organizations") && (searchTerm == "_id")){

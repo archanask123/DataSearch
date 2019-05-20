@@ -4,8 +4,9 @@ import java.io.FileInputStream
 import java.util.Properties
 import java.io.FileNotFoundException
 import java.io.IOException
-import java.nio.file.{Paths, Files}
+import java.nio.file.{Files, Paths}
 
+import org.apache.spark.sql.functions.array_contains
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.util.Try
@@ -94,12 +95,35 @@ object CommonUtil {
       println("No matching record found in available dataset: " + dataSetName)
     } else {
       println("Data Found in " + dataSetName)
-      searchResultDF.show()
+      searchResultDF.show(Int.MaxValue, false)
+      //Alternate option to display result in JSON format
+      println("Displaying in JSON format")
+      searchResultDF.toJSON.collect.foreach(println)
     }
 
     searchResultDF
   }
 
+  /**
+    *
+    * @param df
+    * @param searchTerm
+    * @param searchValue
+    * @param searchOption
+    * @return arrayDataSearchResult
+    */
+  def searchArrayData(df: DataFrame, searchTerm: String, searchValue: String, searchOption: String): DataFrame ={
+    val arrayDataSearchResult = df.select("*").where(array_contains(df(searchTerm), searchValue))
+    if (arrayDataSearchResult.head(1).isEmpty){
+      println("No matching record found in available dataset: " + searchOption)
+    } else{
+      arrayDataSearchResult.show(5000, false)
+      println("Displaying in JSON format")
+      arrayDataSearchResult.toJSON.collect.foreach(println)
+    }
+
+    arrayDataSearchResult
+  }
 
   /**
     *
