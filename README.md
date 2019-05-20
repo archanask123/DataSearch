@@ -48,6 +48,12 @@ val df = spark.read.option("multiline", "true").json("filename.json")
 
 ```
 
+NB: Search results are displayed in tabular format. If the result needs to be in JSON format, uncomment the code in DataSearch.scala
+
+```scala
+ searchResultDF.toJSON.collect.foreach(println)
+```
+
 **Build Project**
 
 ```bash
