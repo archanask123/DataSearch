@@ -1,0 +1,35 @@
+[0m[[0minfo[0m] [0mPackaging /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/jsondatasearch_2.11-0.1.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util/InvalidArgException.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util/InvalidArgException.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/driver/DataSearch$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/driver/DataSearch$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util/InputException.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util/InputException.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/driver[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/driver[0m
+[0m[[0mdebug[0m] [0m	organizations.json[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/organizations.json[0m
+[0m[[0mdebug[0m] [0m	com[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util/CommonUtil$$anonfun$hasColumn$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util/CommonUtil$$anonfun$hasColumn$1.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util/CommonUtil$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util/CommonUtil$.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/driver/DataSearch.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/driver/DataSearch.class[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/driver/DataSearch$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/driver/DataSearch$.class[0m
+[0m[[0mdebug[0m] [0m	tickets.json[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/tickets.json[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util/CommonUtil.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util/CommonUtil.class[0m
+[0m[[0mdebug[0m] [0m	users.json[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/users.json[0m
+[0m[[0mdebug[0m] [0m	com/zendesk[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk[0m
+[0m[[0mdebug[0m] [0m	com/zendesk/assignment/util[0m
+[0m[[0mdebug[0m] [0m	  /Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/com/zendesk/assignment/util[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

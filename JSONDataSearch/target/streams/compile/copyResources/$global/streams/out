@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/archanask/IdeaProjects/JSONDataSearch/src/main/resources/organizations.json,/Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/organizations.json)[0m
+[0m[[0mdebug[0m] [0m	(/Users/archanask/IdeaProjects/JSONDataSearch/src/main/resources/users.json,/Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/users.json)[0m
+[0m[[0mdebug[0m] [0m	(/Users/archanask/IdeaProjects/JSONDataSearch/src/main/resources/tickets.json,/Users/archanask/IdeaProjects/JSONDataSearch/target/scala-2.11/classes/tickets.json)[0m
