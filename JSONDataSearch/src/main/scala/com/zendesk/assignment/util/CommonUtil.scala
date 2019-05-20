@@ -4,6 +4,7 @@ import java.io.FileInputStream
 import java.util.Properties
 import java.io.FileNotFoundException
 import java.io.IOException
+import java.nio.file.{Paths, Files}
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
@@ -46,6 +47,25 @@ object CommonUtil {
     }
 
     properties
+
+  }
+
+
+  def isFileFound(properties: Properties, filePath: String): Boolean ={
+
+    var isFileExists = false
+
+    try{
+
+      Files.exists(Paths.get(filePath))
+      isFileExists = true
+    } catch {
+      case ex: FileNotFoundException => {
+
+        println("File Not Found In Specified Location !!!")
+      }
+    }
+    isFileExists
 
   }
 

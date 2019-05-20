@@ -66,10 +66,16 @@ if [ $selection -eq 1 ]; then
    # Invoke Spark Code
  ${SPARK_HOME_DIR}/bin/spark-submit --files config.properties ${SCALA_JAR_LOC}/jsondatasearch_2.11-0.1.jar $optn $searchTerm $searchValue >> ${LOG_DIR}/dataSearch_${dt}.log 2>&1
 
+retVal=$?
+if [ $retVal -ne 0 ]; then
+
+  printf  "\n\n\n"
+  echo "       Job Search encountered error. Please visit ${LOG_DIR} for more information..."
+else
+    # Displaying output file
+    cat $OUTPUT_FILE_PATH
+fi
   
-# Displaying output file
-cat $OUTPUT_FILE_PATH
- 
   else
     echo "Invalid Selection"
   fi
